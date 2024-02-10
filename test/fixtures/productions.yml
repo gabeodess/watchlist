@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  themoviedb_id: 1
+  type: 
+  released_on: 2024-02-09
+  image_url: MyString
+
+two:
+  title: MyString
+  themoviedb_id: 1
+  type: 
+  released_on: 2024-02-09
+  image_url: MyString

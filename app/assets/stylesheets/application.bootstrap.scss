@@ -2,3 +2,17 @@
 @import 'bootstrap-icons/font/bootstrap-icons';
 
 .fs-7 { font-size: 0.5em }
+
+.btn-column {
+  width: 100%;
+  height: 100%;
+}
+
+.row {
+  [class^='col-']:last-child{
+    .btn-column {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
