@@ -6,23 +6,27 @@ export default () => {
   const [query, setQuery] = useState("");
   const [list, setList] = useState();
 
+  const fetchOptions = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZGZkMmEwMmQ2NGIzNmI4NzI2MGM0MzQwYTI0MzE0MCIsInN1YiI6IjY1YzY4MzZjYTMxNDQwMDE0YzhjNmI2MyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.2GVUpaBy3t3-gESqk8oaT4UdxhUX_DhlrQMgTsNSSH4'
+    }
+  }
+
+  const trending = async () => {
+    setResults((await (await fetch('https://api.themoviedb.org/3/trending/all/day?language=en-US', fetchOptions)).json()).results)
+  }
+
   const search = async (e) => {
     e.preventDefault();
-
-    const options = {
-      method: 'GET',
-      headers: {
-        accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZGZkMmEwMmQ2NGIzNmI4NzI2MGM0MzQwYTI0MzE0MCIsInN1YiI6IjY1YzY4MzZjYTMxNDQwMDE0YzhjNmI2MyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.2GVUpaBy3t3-gESqk8oaT4UdxhUX_DhlrQMgTsNSSH4'
-      }
-    };
 
     const params = new URLSearchParams({
       query,
       page: 1,
     })
     const base = "https://api.themoviedb.org/3/search/multi"
-    const response = await (await fetch([base, params].join("?"), options)).json()
+    const response = await (await fetch([base, params].join("?"), fetchOptions)).json()
     setResults(response.results);
   }
 
@@ -46,6 +50,7 @@ export default () => {
 
   useEffect(() => {
     loadList()
+    trending()
   }, [])
 
   return (

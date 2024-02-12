@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   namespace :api do
     resource :session, only: [:show]
     resources :users, only: [:show]
-    resources :items, only: [:create, :destroy]
+    resources :items, only: [:create, :destroy, :index]
     resource :list, only: [:show]
   end
 

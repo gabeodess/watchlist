@@ -4,9 +4,9 @@ class Item < ApplicationRecord
 
   validates :user_id, {uniqueness: {scope: :production_id}}
 
-  delegate :themoviedb_id, to: :production
+  delegate :themoviedb_id, :title, :released_on, :type, :image_url, to: :production
 
   def as_json_v1
-    as_json(only: [:id], methods: [:themoviedb_id])
+    as_json(only: [:id, :created_at], methods: [:themoviedb_id, :title, :released_on, :type, :image_url])
   end
 end

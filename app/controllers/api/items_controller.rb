@@ -1,4 +1,8 @@
 class Api::ItemsController < ApiController
+  def index
+    render json: {items: current_user.items.includes(:production).as_json(:v1)}
+  end
+
   def create
     current_user.items.create(production: production)
     head :ok
