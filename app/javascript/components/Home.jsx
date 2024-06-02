@@ -96,10 +96,11 @@ export default () => {
                     </div>
                   </div>
                   <div className="col-2">
-                    {!list[result.id] 
-                      ? <button className="btn btn-success btn-sm btn-column" onClick={() => add(production)}>+</button>
-                      : <button className="btn btn-primary btn-sm btn-column" onClick={() => remove(list[result.id].id)}>-</button>
-                    }
+                    {list && (
+                      !list[result.id]
+                        ? <button className="btn btn-success btn-sm btn-column" onClick={() => add(production)}>+</button>
+                        : <button className="btn btn-primary btn-sm btn-column" onClick={() => remove(list[result.id].id)}>-</button>
+                    )}
                   </div>
                 </div>
               </div>
