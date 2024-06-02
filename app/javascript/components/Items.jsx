@@ -19,7 +19,7 @@ export default () => {
         <div className="card mb-3">
           <div className="row g-0">
             <div className="col-3">
-              <a target="_blank" href={["https://fmoviesz.to/filter", new URLSearchParams({keyword: item.title})].join("?")}>
+              <a target="_blank" href={["https://fmovies24.to/filter", new URLSearchParams({keyword: item.title})].join("?")}>
                 <img src={item.image_url} className="img-fluid rounded-start" width="100%"/>
               </a>
             </div>
