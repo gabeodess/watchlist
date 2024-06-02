@@ -8,6 +8,11 @@ export default () => {
     setItems(response.items);
   }
 
+  const remove = async (id) => {
+    await fetch(`/api/items/${id}`, {method: "DELETE"});
+    loadItems();
+  }
+
   useEffect(() => {
     loadItems();
   }, [])
