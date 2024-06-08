@@ -62,9 +62,9 @@ export default () => {
             onChange={e => setQuery(e.target.value)}
             type="text" 
             className="form-control" 
-            placeholder="Title..." 
-            aria-label="Recipient's username" 
-            aria-describedby="button-addon2" />
+            placeholder="Title..."
+            aria-describedby="button-addon2"
+            autoFocus />
           <button className="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
         </div>
       </form>
