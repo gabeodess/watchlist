@@ -31,7 +31,7 @@ export default () => {
             <div className="col-7">
               <div className="card-body">
                 <p className="card-title">{item.title}</p>
-                <p className="card-text"><small className="text-body-secondary">{item.type} {item.released_on?.split('-')[0]}</small></p>
+                <p className="card-text"><small className="text-body-secondary">{item.type} {item.released_on}</small></p>
               </div>
             </div>
             <div className="col-2">

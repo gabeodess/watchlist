@@ -92,7 +92,13 @@ export default () => {
                   <div className="col-7">
                     <div className="card-body">
                       <p className="card-title">{production.title}</p>
-                      <p className="card-text"><small className="text-body-secondary">{result.media_type} {production.released_on?.split('-')[0]}</small></p>
+                      <p className="card-text">
+                        <small
+                          className="text-body-secondary">{result.media_type} {production.released_on}</small>
+                      </p>
+                    </div>
+                    <div className="card-footer text-body-secondary">
+                      <div><span className="badge text-bg-secondary">{result.vote_average ? Math.round(result.vote_average * 10)/10 : '-'}</span></div>
                     </div>
                   </div>
                   <div className="col-2">
